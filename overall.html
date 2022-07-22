@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getFetch</title>
+    <link rel="shortcut icon" href="./mochanatie.svg" type="image/x-icon" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS section -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-style: normal;
+        font-size: medium;
+        font-weight: normal;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      header {
+        padding: 0.38vw 0;
+        border-bottom: 1px solid #e9e9eb;
+      }
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header .container .left {
+        transition: all 0.18s ease;
+        cursor: pointer;
+      }
+      header .container .left .iceLOGO {
+        opacity: 1;
+        height: 3.88vw;
+        transition: all 0.38s ease;
+      }
+      header .container .left .teaLOGO {
+        opacity: 0;
+        height: 3.88vw;
+        transform: translateX(-4.22vw);
+        transition: all 0.38s ease;
+      }
+      header .container .left:hover .iceLOGO {
+        opacity: 0;
+      }
+      header .container .left:hover .teaLOGO {
+        opacity: 1;
+      }
+      header .container .left h5 {
+        display: inline-block;
+        transform: translate(-4.44vw, 0.22vw);
+        font-weight: bolder;
+      }
+      header .container .left:hover {
+        color: #529b2e;
+      }
+      header .container .right a {
+        margin-left: 1.11vw;
+        font-size: larger;
+        text-decoration: none;
+        color: #606266;
+        transition: all 0.18s ease;
+      }
+      header .container .right a:hover {
+        color: #337ecc;
+      }
+      header .container .right a img {
+        width: 1.88vw;
+      }
+      section {
+        width: 100vw;
+        text-align: center;
+      }
+      section .container .top {
+        padding: 2.22vw 3.33vw;
+      }
+      section .container .top h1 {
+        font-weight: 900;
+        font-size: 4.44vw;
+      }
+      section .container .top h1 span {
+        font-size: larger;
+        background-image: #22c1c3;
+        background-image: linear-gradient(90deg, #22c1c3 0%, #fddf2d 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      section .container .top p {
+        color: #73767a;
+        font-size: x-large;
+        padding-top: 1.88vw;
+        padding-bottom: 1.11vw;
+      }
+      section .container .bottom {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      section .container .bottom button {
+        display: block;
+        width: 8.88vw;
+      }
+      section .container .bottom button a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .progress {
+        margin-top: 2.22vw;
+      }
+      .content {
+        margin-top: 2.22vw;
+        margin-bottom: 3.88vw;
+      }
+      .content ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .content ul li {
+        display: block;
+        width: 12.88vw;
+        border-radius: 1.11vw;
+        padding: 1.11vw;
+      }
+      .content ul li h5 {
+        margin-bottom: 0.38vw;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 1.11vw;
+      }
+      .learn {
+        margin-bottom: 1.11vw;
+      }
+      footer {
+        text-align: center;
+      }
+      footer div {
+        display: block;
+        width: 11.11vw;
+        border-top: 1px dotted darkgrey;
+        margin: 0 auto;
+      }
+    </style>
+
+    <!-- cdn import -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- init -->
+    <script>
+      ScrollReveal({ reset: true });
+    </script>
+  </head>
+
+  <body>
+    <!-- just fireFox & chrome & edge -->
+    <header>
+      <div class="container">
+        <div class="left">
+          <img
+            src="./bingnatie.svg"
+            alt="coffee"
+            title="coffee"
+            class="iceLOGO"
+          />
+          <img
+            src="./mochanatie.svg"
+            alt="coffee"
+            title="coffee"
+            class="teaLOGO"
+          />
+
+          <h5 class="logo">getFetch</h5>
+        </div>
+
+        <div class="right">
+          <a href="https://developer.mozilla.org/zh-CN/">MDN document</a>
+          <a href="https://github.com/CreamR"
+            ><img src="./github.svg" alt="github"
+          /></a>
+          <a href="https://getbootstrap.com/"
+            ><img src="./Bootstrap.svg" alt="getbootstrap" title="getbootstrap"
+          /></a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="top">
+          <h1>The <span>Net Request</span> Integration by JavaScript</h1>
+          <p>
+            a package of modern net request, just use it for the separation
+            between front end and back end engineering.
+          </p>
+        </div>
+        <div class="bottom">
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions"
+            style="font-weight: 500; font-size: large"
+          >
+            learn more
+          </button>
+
+          <div
+            class="offcanvas offcanvas-start"
+            data-bs-scroll="true"
+            tabindex="-1"
+            id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+                Notification
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <p>
+                只是一个小demo, 本来很少用这种单文件写代码的,
+                想把代码放在服务器上试试看,
+                所以就试着做了！实际上前端并不负责部署上线项目,
+                如果要部署上线一个项目,
+                比如我之前写的大数据图表(当然目前还在开发中,
+                学完状态管理库再继续, 最近太懒了),
+                此时需要增加学习成本来学习Nginx(是这么拼的吧- -!),
+                再加上购买服务器部署服务器的时间可能就太繁琐了,
+                想把时间用在有意义的事情上。
+                <strong>此demo不支持IE</strong>
+                <strong
+                  >尽量使用chrome & edge浏览, Safari / FireFox /
+                  opera可能会有一些小bug,
+                  主要是由于CSS下载标签有的浏览器支持还不够好
+                  以及渐变色的文字也需要加上webkit前缀才能支持Safari</strong
+                >
+              </p>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-light"
+            style="font-weight: 500; font-size: large"
+          >
+            <a href="./overall.html" download="code">Get Start</a>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- progress -->
+    <div class="progress">
+      <div
+        class="progress-bar progress-bar-striped progress-bar-animated"
+        role="progressbar"
+        aria-label="Animated striped example"
+        aria-valuenow="75"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        style="width: 100%"
+      ></div>
+    </div>
+
+    <!-- content -->
+    <div class="content container">
+      <ul>
+        <li class="shadow convenience">
+          <div class="card-body">
+            <h5 class="card-title">Convenience</h5>
+            <p class="card-text">
+              Builds on top of standard HTML, CSS and JavaScript with API.
+            </p>
+          </div>
+        </li>
+        <li class="shadow compatible">
+          <div class="card-body">
+            <h5 class="card-title">Compatible</h5>
+            <p class="card-text">
+              You can use it like the same means of axios, and jQuery is not a
+              necessity.
+            </p>
+          </div>
+        </li>
+        <li class="shadow small">
+          <div class="card-body">
+            <h5 class="card-title">Small</h5>
+            <p class="card-text">
+              The package is pretty small, just 10 lines of code, use it like
+              get a coffee.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <h1>CONTENT</h1>
+
+    <!-- learn section -->
+    <div class="learn container">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">
+              <button type="button" class="btn btn-light"></button>
+            </th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird with fetch of window</td>
+            <td>@twitter</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Harry</td>
+            <td>uniPost</td>
+            <td>@unity</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Jacks</td>
+            <td>techYard</td>
+            <td>@google</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer>
+      <div>
+        <h5>made by Gmz</h5>
+      </div>
+    </footer>
+
+    <!-- orginal JS -->
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        // define animate
+        class Animate {
+          animateCompatible = {
+            distance: "38.88px",
+            origin: "bottom",
+            delay: 111,
+            duration: 888,
+          };
+          aniamteConvenience = {
+            distance: "38.88px",
+            origin: "left",
+            delay: 666,
+            duration: 888,
+          };
+          aniamteSmall = {
+            distance: "38.88px",
+            origin: "right",
+            delay: 666,
+            duration: 888,
+          };
+        }
+        const aniamte = new Animate();
+
+        // use animate section
+        ScrollReveal().reveal(".convenience", aniamte.aniamteConvenience);
+        ScrollReveal().reveal(".compatible", aniamte.animateCompatible);
+        ScrollReveal().reveal(".small", aniamte.aniamteSmall);
+        ScrollReveal().reveal(".logo", aniamte.aniamteConvenience);
+
+        // link function
+        const linkHTML = document.querySelector("header .left");
+        linkHTML.addEventListener("click", (eve) => {
+          location.href = "https://github.com/CreamR";
+        });
+
+        // dark mode & light mode
+        const mode = document.querySelector(".learn button");
+        const table = document.querySelector("table");
+        mode.addEventListener("click", (eve) => {
+          if (table.classList.contains("table-dark")) {
+            // if dark mode exist
+            // switch light mode
+            table.classList.replace("table-dark", "table-light");
+          } else {
+            table.classList.replace("table-light", "table-dark");
+          }
+        });
+      });
+    </script>
+
+    <!-- package -->
+    <script>
+      // NET REQUEST INTEGRATION
+      class request {
+        async get(url) {
+          try {
+            let data = await fetch(url).then((val) => val.json());
+            return await data;
+          } catch (error) {
+            console.log(error);
+          }
+        }
+        async post(url, data) {
+          try {
+            let data = await fetch(url, {
+              method: "post",
+              body: JSON.stringify(data),
+            });
+            console.log(data);
+          } catch (error) {
+            console.log(error);
+          }
+        }
+      }
+      const http = new request();
+
+      // TEST DATA
+      let res = http.get(
+        "http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=哈尔滨&bk_length=600"
+      );
+      console.log(res);
+    </script>
+  </body>
+</html>
