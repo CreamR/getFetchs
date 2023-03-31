@@ -1,1 +1,1 @@
-# use it from the last script brand in the HTML file.
+# use it from the lastest script brand in the HTML file.
